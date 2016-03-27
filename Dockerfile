@@ -1,6 +1,6 @@
 FROM gliderlabs/alpine:3.3
 
-RUN apk-install openjdk7-jre-base ; \
+RUN apk-install openjdk8-jre-base ; \
     apk-install bash ; \
     apk-install curl
 
@@ -21,5 +21,5 @@ VOLUME [ "/root/.brooklyn", "/root/.ssh" , "/root/.brooklyn-persistence" ]
 
 EXPOSE 8081
 
-ENTRYPOINT /cloudsoft-amp-pro-${AMP_PRO_VERSION}/bin/amp launch --persist auto --persistenceDir /root/.brooklyn-persistence --catalogAdd http://s3.amazonaws.com/amp-daytrader-mesos-demo/tmp_dir_pending_public_repos/mesos.bom,http://s3.amazonaws.com/amp-daytrader-mesos-demo/tmp_dir_pending_public_repos/websphere-liberty.bom,http://s3.amazonaws.com/amp-daytrader-mesos-demo/tmp_dir_pending_public_repos/wildfly10.bom,http://s3.amazonaws.com/amp-daytrader-mesos-demo/tmp_dir_pending_public_repos/daytrader-websphereliberty-cluster.bom,http://s3.amazonaws.com/amp-daytrader-mesos-demo/tmp_dir_pending_public_repos/daytrader-wildfly-cluster.bom
+ENTRYPOINT /cloudsoft-amp-pro-${AMP_PRO_VERSION}/bin/amp launch --persist auto --persistenceDir /root/.brooklyn-persistence --catalogAdd https://s3.amazonaws.com/amp-daytrader-mesos-demo/tmp_dir_pending_public_repos/mesos.bom,https://s3.amazonaws.com/amp-daytrader-mesos-demo/tmp_dir_pending_public_repos/websphere-liberty.bom,https://s3.amazonaws.com/amp-daytrader-mesos-demo/tmp_dir_pending_public_repos/wildfly10.bom,https://s3.amazonaws.com/amp-daytrader-mesos-demo/tmp_dir_pending_public_repos/daytrader-websphereliberty-cluster.bom,https://s3.amazonaws.com/amp-daytrader-mesos-demo/tmp_dir_pending_public_repos/daytrader-wildfly-cluster.bom
 
